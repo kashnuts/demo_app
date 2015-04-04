@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'demo_pages/home'
+  get 'members/new'
 
-  get 'demo_pages/team'
-
-  get 'demo_pages/about'
+  root  'demo_pages#home'
+  match '/signup', to: 'users#new', via 'get'
+  match '/team',    to: 'demo_pages#team',    via: 'get'
+  match '/about',   to: 'demo_pages#about',   via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
